@@ -1,0 +1,39 @@
+name = "mtproto-wizard"
+main = "src/index.js"
+compatibility_date = "2023-12-01"
+
+[env.production]
+name = "mtproto-wizard-prod"
+
+[env.staging]
+name = "mtproto-wizard-staging"
+
+# Environment variables for configuration
+[vars]
+MTPROTO_VERSION = "2.0"
+MAX_CONNECTIONS = "1000"
+CACHE_TTL = "3600"
+RATE_LIMIT_REQUESTS = "100"
+RATE_LIMIT_WINDOW = "60"
+ENABLE_LOGGING = "true"
+ENABLE_METRICS = "true"
+
+# KV namespaces for caching and session storage
+[[kv_namespaces]]
+binding = "CACHE"
+id = "mtproto_cache"
+preview_id = "mtproto_cache_preview"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "mtproto_sessions"
+preview_id = "mtproto_sessions_preview"
+
+# Durable Objects for connection management
+[[durable_objects.bindings]]
+name = "CONNECTION_MANAGER"
+class_name = "ConnectionManager"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ConnectionManager"]
