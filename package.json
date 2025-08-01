@@ -1,12 +1,14 @@
 {
   "name": "cloudflare-worker-mtproto-wizard",
   "version": "1.0.0",
-  "description": "The most advanced conceivable Cloudflare Worker MTProto wizard with comprehensive proxy, encryption, and anti-censorship capabilities",
+  "description": "The most advanced conceivable no-ping Cloudflare Worker MTProto wizard with intelligent connection persistence, multiplexing, and predictive optimization",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "test": "jest",
+    "test:noping": "node test-noping.js",
     "lint": "eslint src/",
     "format": "prettier --write src/"
   },
@@ -17,7 +19,12 @@
     "telegram",
     "proxy",
     "encryption",
-    "anti-censorship"
+    "anti-censorship",
+    "no-ping",
+    "intelligent-persistence",
+    "connection-multiplexing",
+    "predictive-caching",
+    "advanced-optimization"
   ],
   "author": "MTProto Wizard Team",
   "license": "MIT",
